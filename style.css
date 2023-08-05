@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@500&display=swap');*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'REM', sans-serif;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 10px;
+  background: #221f2f;
+  overflow: hidden;
+}
+
+body::before{
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: #ffffff;
+  left: 15%;
+  top: 20%;
+  filter: blur(130px);
+}
+
+body::after{
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: #22a8cd;
+  left: 80%;
+  top: 74%;
+  filter: blur(150px);
+}
+
+.container {
+  width: 25rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.44);
+  padding: 20px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.4px);
+  -webkit-backdrop-filter: blur(7.4px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.container h1{
+  font-weight: 700;
+  text-align: center;
+}
+
+.container h2{
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.container form{
+  margin: 30px 0 10px 0;
+}
+
+.container form p{
+  font-size: 1rem;
+  margin-bottom: 7px;
+}
+
+.container form input{
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0 15px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #999;
+  transition: all 0.3s ease;
+}
+
+.container form input:hover{
+  border: 1px solid #675afe;
+}
+
+.container form input:focus{
+  padding: 0 14px;
+  border: 1px solid #675afe;
+}
+
+.container form .convert-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.container form .from, .container form .to{
+  width: 100%;
+}
+
+.container .convert-box .select-input{
+  display: flex;
+  width: 100%;
+  border: 1px solid #999;
+  height: 40px;
+  align-items: center;
+  border-radius: 5px;
+  padding: 0 20px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.container .convert-box .select-input:hover {
+  border: 1px solid #675afe;
+}
+.container .convert-box .select-input img{
+  max-width: 20px;
+}
+.container .convert-box .select-input select{
+  width: 100%;
+  cursor: pointer;
+  font-size: 1rem;
+  background: none;
+  margin: 0 -5px 0 5px;
+  color: white;
+}
+.container .convert-box .select-input select option{
+  color: black;
+}
+.container .convert-box .reverse{
+  cursor: pointer;
+  margin-top: 32px;
+  font-size: 22px;
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+}
+.container .convert-box .reverse:hover{
+  color: #675afe;
+}
+.container form .result{
+  font-size: 1.1rem;
+  margin: 20px 0 30px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  top: 20px;
+  left: 20px;
+}
+
+.buttons button {
+  width: 150px;
+  height: 50px;
+  background-color: #fff;
+  margin: 20px;
+  color: #568fa6;
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.buttons button:before, .buttons button:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #675afe;
+  transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button:before {
+  right: 0;
+  top: 0;
+  transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button:after {
+  left: 0;
+  bottom: 0;
+}
+
+.buttons button span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+.buttons button span:before, .buttons button span:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 0;
+  background-color: #675afe;
+  transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button span:before {
+  right: 0;
+  top: 0;
+  transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button span:after {
+  left: 0;
+  bottom: 0;
+}
+
+.buttons button p {
+  padding: 0;
+  margin: 0;
+  transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.buttons button p:before, .buttons button p:after {
+  position: absolute;
+  width: 100%;
+  transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+  z-index: 1;
+  left: 0;
+}
+
+.buttons button p:before {
+  content: attr(data-title);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.buttons button p:after {
+  content: attr(data-text);
+  top: 150%;
+  color: #675afe;
+}
+
+.buttons button:hover:before, .buttons button:hover:after {
+  width: 100%;
+}
+
+.buttons button:hover span {
+  z-index: 1;
+}
+
+.buttons button:hover span:before, .buttons button:hover span:after {
+  height: 100%;
+}
+
+.buttons button:hover p:before {
+  top: -50%;
+  transform: rotate(5deg);
+}
+
+.buttons button:hover p:after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.buttons button.start {
+  background-color: #44d8a4;
+  box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.buttons button.start p:before {
+  top: -50%;
+  transform: rotate(5deg);
+}
+
+.buttons button.start p:after {
+  color: white;
+  transition: all 0s ease;
+  content: attr(data-start);
+  top: 50%;
+  transform: translateY(-50%);
+  animation: start 0.3s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes start {
+  from {
+    top: -50%;
+  }
+}
+
+.buttons button.start:hover:before, .buttons button.start:hover:after {
+  display: none;
+}
+
+.buttons button.start:hover span {
+  display: none;
+}
+
+.buttons button:active {
+  outline: none;
+  border: none;
+}
+
+.buttons button:focus {
+  outline: 0;
+}
+.card {
+width: fit-content;
+height: fit-content;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 2px 2px;
+gap: 20px;
+box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+/* for all social containers*/
+.socialContainer {
+width: 52px;
+height: 52px;
+background-color: rgb(44, 44, 44);
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+transition-duration: .3s;
+}
+/* instagram*/
+.containerOne:hover {
+background-color: #d62976;
+transition-duration: .3s;
+}
+/* twitter*/
+.containerTwo:hover {
+background-color: grey;
+transition-duration: .3s;
+}
+/* linkdin*/
+.containerThree:hover {
+background-color: #0072b1;
+transition-duration: .3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+background-color: #128C7E;
+transition-duration: .3s;
+}
+
+.socialContainer:active {
+transform: scale(0.9);
+transition-duration: .3s;
+}
+
+.socialSvg {
+width: 17px;
+}
+
+.socialSvg path {
+fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+0% {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+100% {
+  transform: translateY(0);
+  opacity: 1;
+}
+}
